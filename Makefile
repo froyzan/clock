@@ -22,8 +22,8 @@ SRCS	= $(addprefix $(SRCDIR), $(SRC))
 
 UTLDIR	= ./utils/
 UTL		= ft_putchar.c ft_putstr.c ft_strlen.c ft_calloc.c ft_strnbr.c\
-		  ft_bzero.c ft_strnew.c ft_strcmp.c ft_strcpy.c ft_strncpy.c\
-		  ft_putnchar.c ft_nbrlen.c ft_putnbr.c ft_putui.c ft_puthex.c
+		ft_strnew.c ft_strcmp.c ft_strcpy.c ft_strncpy.c\
+		ft_putnchar.c ft_nbrlen.c ft_putnbr.c ft_putui.c ft_puthex.c
 UTLS	= $(addprefix $(UTLDIR), $(UTL))
 
 OBJS	= $(SRCS:.c=.o) $(UTLS:.c=.o)
