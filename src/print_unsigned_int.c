@@ -80,7 +80,7 @@ t_info			*print_unsigned_int(t_info *s)
 	int					nbrlen;
 	int					z;
 
-	nbr = va_arg(s->ap, unsigned int);
+	nbr = va_arg(s->ap, unsigned long long);
 	nbrlen = length(s, nbr);
 	z = s->prec - nbrlen;
 	if (z < 0)

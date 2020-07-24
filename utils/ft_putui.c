@@ -12,7 +12,7 @@
 
 #include "../include/ft_printf.h"
 
-void	ft_putui(unsigned int i)
+void	ft_putui(unsigned long long i)
 {
 	if (i > 9)
 	{

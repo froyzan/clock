@@ -91,6 +91,8 @@ t_info		*search_type(t_info *s)
 		s = print_hexadecimal(s);
 	else if (*s->fm == '%')
 		s = print_percentage(s);
+	else
+		return (s);
 	s->fm++;
 	return (s);
 }

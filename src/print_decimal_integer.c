@@ -12,7 +12,7 @@
 
 #include "../include/ft_printf.h"
 
-static void		di_width(t_info *s, int nbr, int nbrlen, int z)
+static void		di_width(t_info *s, long long nbr, int nbrlen, int z)
 {
 	if (s->flag[ZERO] == '1' && z == 0)
 	{
@@ -37,7 +37,7 @@ static void		di_width(t_info *s, int nbr, int nbrlen, int z)
 		ft_putnbr(nbr);
 }
 
-static int		di_length(t_info *s, int nbr)
+static int		di_length(t_info *s, long long nbr)
 {
 	int		nbrlen;
 
@@ -49,7 +49,7 @@ static int		di_length(t_info *s, int nbr)
 	return (nbrlen);
 }
 
-static void		di_minus(t_info *s, int nbr, int nbrlen, int z)
+static void		di_minus(t_info *s, long long nbr, int nbrlen, int z)
 {
 	if (nbr < 0)
 		ft_putchar('-');
@@ -61,7 +61,7 @@ static void		di_minus(t_info *s, int nbr, int nbrlen, int z)
 			ft_putchar(' ');
 }
 
-static void		di_nonminus(t_info *s, int nbr, int nbrlen, int z)
+static void		di_nonminus(t_info *s, long long nbr, int nbrlen, int z)
 {
 	if (s->width > nbrlen)
 		di_width(s, nbr, nbrlen, z);
@@ -81,7 +81,7 @@ t_info			*print_decimal_integer(t_info *s)
 	int		nbrlen;
 	int		z;
 
-	nbr = va_arg(s->ap, int);
+	nbr = va_arg(s->ap, long long);
 	nbrlen = di_length(s, nbr);
 	z = s->prec - ft_nbrlen(nbr);
 	if (z < 0)
