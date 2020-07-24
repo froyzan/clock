@@ -12,7 +12,7 @@
 
 #include "../include/ft_printf.h"
 
-static int		length(t_info *s, unsigned long long nbr)
+static int		length(t_info *s, unsigned int nbr)
 {
 	int		nbrlen;
 
@@ -27,7 +27,7 @@ static int		length(t_info *s, unsigned long long nbr)
 	return (nbrlen);
 }
 
-static void		minus(t_info *s, unsigned long long nbr, int nbrlen, int z)
+static void		minus(t_info *s, unsigned int nbr, int nbrlen, int z)
 {
 	ft_putnchar('0', z);
 	if (s->point != 1 || nbr != 0)
@@ -37,7 +37,7 @@ static void		minus(t_info *s, unsigned long long nbr, int nbrlen, int z)
 			ft_putchar(' ');
 }
 
-static void		nonminus(t_info *s, unsigned long long nbr, int nbrlen, int z)
+static void		nonminus(t_info *s, unsigned int nbr, int nbrlen, int z)
 {
 	if (s->width > nbrlen && (s->flag[ZERO] != '1' || s->point != 0))
 		while (--s->width > nbrlen + z)
@@ -56,7 +56,7 @@ t_info			*print_hexadecimal(t_info *s)
 	int				nbrlen;
 	int				z;
 
-	nbr = va_arg(s->ap, unsigned long long);
+	nbr = va_arg(s->ap, unsigned int);
 	nbrlen = length(s, nbr);
 	z = s->prec - nbrlen;
 	if (z < 0)

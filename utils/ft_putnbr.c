@@ -12,10 +12,10 @@
 
 #include "../include/ft_printf.h"
 
-void	ft_putnbr(long long i)
+void	ft_putnbr(int i)
 {
-	if ((unsigned long long)i == -9223372036854775808U)
-		ft_putstr("9223372036854775808");
+	if (i == -2147483648)
+		ft_putstr("-2147483648");
 	else if (i < 0)
 		ft_putnbr(i * -1);
 	else if (i >= 0 && i <= 9)

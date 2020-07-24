@@ -60,13 +60,13 @@ t_info		*print_percentage(t_info *s);
 ** Utils (libft)
 */
 void		*ft_calloc(size_t nmemb, size_t size);
-int			ft_nbrlen(long long nbr);
+int			ft_nbrlen(int nbr);
 void		ft_putchar(char c);
-void		ft_puthex(unsigned long long i, char c);
-void		ft_putnbr(long long i);
+void		ft_puthex(unsigned int i, char c);
+void		ft_putnbr(int i);
 void		ft_putnchar(char c, int n);
 void		ft_putstr(const char *s);
-void		ft_putui(unsigned long long i);
+void		ft_putui(unsigned int i);
 int			ft_strcmp(const char *s1, const char *s2);
 char		*ft_strcpy(char *dst, const char *src);
 size_t		ft_strlen(const char *s);

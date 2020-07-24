@@ -12,7 +12,7 @@
 
 #include "../include/ft_printf.h"
 
-static int		length(t_info *s, unsigned long long nbr)
+static int		length(t_info *s, unsigned int nbr)
 {
 	int		nbrlen;
 
@@ -28,7 +28,7 @@ static int		length(t_info *s, unsigned long long nbr)
 }
 
 static t_info	*print_unsigned_int_3
-	(t_info *s, unsigned long long nbr, int nbrlen, int z)
+	(t_info *s, unsigned int nbr, int nbrlen, int z)
 {
 	s->width++;
 	if (s->flag[ZERO] == '1' && s->flag[MINUS] != '1' && z == 0)
@@ -53,7 +53,7 @@ static t_info	*print_unsigned_int_3
 }
 
 static t_info	*print_unsigned_int_2
-	(t_info *s, unsigned long long nbr, int nbrlen, int z)
+	(t_info *s, unsigned int nbr, int nbrlen, int z)
 {
 	if (s->flag[MINUS] == '1' && (s->point != 1 || nbr != 0))
 	{
@@ -76,11 +76,11 @@ static t_info	*print_unsigned_int_2
 
 t_info			*print_unsigned_int(t_info *s)
 {
-	unsigned long long	nbr;
-	int					nbrlen;
-	int					z;
+	unsigned int	nbr;
+	int				nbrlen;
+	int				z;
 
-	nbr = va_arg(s->ap, unsigned long long);
+	nbr = va_arg(s->ap, unsigned int);
 	nbrlen = length(s, nbr);
 	z = s->prec - nbrlen;
 	if (z < 0)

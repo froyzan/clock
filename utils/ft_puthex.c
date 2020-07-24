@@ -12,7 +12,7 @@
 
 #include "../include/ft_printf.h"
 
-void	ft_puthex(unsigned long long i, char c)
+void	ft_puthex(unsigned int i, char c)
 {
 	if (i > 15)
 	{
