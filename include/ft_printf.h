@@ -62,7 +62,7 @@ t_info			*print_percentage(t_info *s);
 void			*ft_calloc(size_t nmemb, size_t size);
 int				ft_nbrlen(int nbr);
 void			ft_putchar(char c);
-void			ft_puthex(unsigned int i, char c);
+void			ft_puthex(unsigned long long i, char c);
 void			ft_putnbr(int i);
 void			ft_putnchar(char c, int n);
 void			ft_putstr(const char *s);
